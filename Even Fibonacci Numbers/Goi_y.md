@@ -40,15 +40,15 @@ Nhận xét cách trên:
 
 Đệ quy không phải là cách tối ưu cho bài toán này, vì mỗi lần gọi lại hàm lại tính lại các giá trị trước đó. 
 
-Vòng lặp while của bạn thực hiện tốt việc dừng khi số Fibonacci vượt quá 4 triệu. 
+Vòng lặp while thực hiện tốt việc dừng khi số Fibonacci vượt quá 4 triệu. 
 
-Tuy nhiên, mỗi lần trong vòng lặp bạn gọi fibonaci(i) ba lần: một lần để kiểm tra giá trị, một lần để kiểm tra nếu nó chẵn, và một lần để thêm vào danh sách. Điều này làm tăng thời gian tính toán, vì mỗi lần gọi hàm đệ quy đều tốn tài nguyên.
+Tuy nhiên, mỗi lần trong vòng lặp gọi fibonaci(i) ba lần: một lần để kiểm tra giá trị, một lần để kiểm tra nếu nó chẵn, và một lần để thêm vào danh sách. Điều này làm tăng thời gian tính toán, vì mỗi lần gọi hàm đệ quy đều tốn tài nguyên.
 
 Cách tối ưu:
 
-Tính lại Fibonacci theo vòng lặp: Bạn có thể sử dụng một vòng lặp để tính số Fibonacci mà không cần đến đệ quy.
+Tính lại Fibonacci theo vòng lặp: có thể sử dụng một vòng lặp để tính số Fibonacci mà không cần đến đệ quy.
 
-Tính tổng các số chẵn: Thay vì lưu trữ tất cả các số chẵn trong một danh sách, bạn có thể trực tiếp cộng vào tổng khi gặp số chẵn.
+Tính tổng các số chẵn: Thay vì lưu trữ tất cả các số chẵn trong một danh sách, có thể trực tiếp cộng vào tổng khi gặp số chẵn.
 
 ```python
 total = 0
@@ -71,9 +71,9 @@ print(total)
 
 Cách trên đã khá tối ưu nhưng vẫn có thể cải thiện thêm 1 chút về mặt hiệu suất:
 
-Sử dụng 2 biến thay vì 3: Bạn có thể giảm một biến c và chỉ cần duy trì hai biến a và b để tính số Fibonacci mà không cần phải lưu trữ giá trị c sau mỗi lần tính.
+Sử dụng 2 biến thay vì 3: có thể giảm một biến c và chỉ cần duy trì hai biến a và b để tính số Fibonacci mà không cần phải lưu trữ giá trị c sau mỗi lần tính.
 
-Không cần phải kiểm tra điều kiện trong vòng lặp: Thực tế, bạn có thể chỉ tính các số Fibonacci chẵn mà không cần phải duy trì tất cả các số Fibonacci. Điều này giúp giảm số lần tính toán, nhưng việc này chỉ hiệu quả nếu bạn muốn tối ưu thêm về mặt số lượng phép toán.
+Không cần phải kiểm tra điều kiện trong vòng lặp: Thực tế, có thể chỉ tính các số Fibonacci chẵn mà không cần phải duy trì tất cả các số Fibonacci. Điều này giúp giảm số lần tính toán, nhưng việc này chỉ hiệu quả nếu muốn tối ưu thêm về mặt số lượng phép toán.
 
 ```python
 total = 0
